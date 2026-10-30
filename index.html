@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#11110f">
+<title>RAZAK STORE — Digital Goods</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#" onclick="showPage('store');return false"><span class="brand-mark">R</span><span>RAZAK<span class="accent">STORE</span><small>DIGITAL GOODS</small></span></a>
+  <nav><button class="nav-link active" data-page="store">Store</button><button class="nav-link" data-page="orders">Pesanan</button></nav>
+  <div class="top-actions"><button class="icon-btn" id="cartOpen" aria-label="Keranjang">Bag <b id="cartCount">0</b></button><button class="admin-open" id="adminOpen">Admin ↗</button></div>
+</header>
+
+<main>
+<section id="storePage" class="page">
+  <div class="hero">
+    <div class="hero-copy"><span class="eyebrow"><i></i> DIGITAL STORE • EST. 2026</span><h1>Tools digital.<br><em>Tanpa batas.</em></h1><p>Temukan produk digital pilihan untuk mendukung kreativitas dan produktivitasmu.</p><a href="#catalog" class="primary-btn">Jelajahi produk <span>↘</span></a></div>
+    <div class="hero-art"><div class="art-ring"></div><div class="art-card"><span>RZ / DIGITAL</span><strong>MAKE<br>IT<br>HAPPEN.</strong><small>RAZAK STORE — 001</small></div><div class="art-tag">INDEPENDENT<br>DIGITAL GOODS</div></div>
+  </div>
+  <div class="ticker"><span>DESIGNED FOR CREATORS</span><b>✳</b><span>INSTANT DIGITAL ACCESS</span><b>✳</b><span>RAZAK STORE</span><b>✳</b><span>DESIGNED FOR CREATORS</span></div>
+  <section id="catalog" class="catalog">
+    <div class="section-head"><div><span class="eyebrow">THE COLLECTION</span><h2>Produk pilihan<span class="accent">.</span></h2></div><div class="catalog-tools"><input id="searchInput" placeholder="Cari produk..." aria-label="Cari produk"><select id="categoryFilter"><option value="all">Semua kategori</option><option>Template</option><option>Preset</option><option>E-book</option><option>Tools</option></select></div></div>
+    <div id="productGrid" class="product-grid"></div>
+  </section>
+</section>
+
+<section id="ordersPage" class="page hidden">
+  <div class="subpage-head"><span class="eyebrow">ORDER CENTER</span><h1>Pesanan kamu<span class="accent">.</span></h1><p>Masukkan ID pesanan untuk melihat status transaksi.</p></div>
+  <div class="lookup"><input id="orderLookup" placeholder="Contoh: RZ-123456"><button class="primary-btn" id="lookupBtn">Periksa pesanan</button></div>
+  <div id="orderResult"></div>
+</section>
+</main>
+
+<footer><div class="footer-brand">RAZAK<span class="accent">STORE</span></div><p>Digital goods for your next idea.</p><small>© 2026 RAZAK STORE. Independent digital store.</small></footer>
+
+<div class="overlay hidden" id="cartOverlay"><aside class="drawer"><div class="drawer-head"><div><span class="eyebrow">YOUR SELECTION</span><h2>Keranjang</h2></div><button class="close-btn" data-close="cartOverlay">×</button></div><div id="cartItems"></div><div class="drawer-bottom"><div class="total-line"><span>Total</span><strong id="cartTotal">Rp0</strong></div><button class="primary-btn full" id="checkoutBtn">Lanjut checkout ↗</button><small class="muted">Mode testing — tidak ada pembayaran sungguhan.</small></div></aside></div>
+
+<div class="overlay hidden" id="checkoutOverlay"><section class="modal"><button class="close-btn modal-close" data-close="checkoutOverlay">×</button><span class="eyebrow">SECURE CHECKOUT · DEMO</span><h2>Selesaikan pesanan<span class="accent">.</span></h2><form id="checkoutForm"><label>Nama lengkap<input name="name" required placeholder="Nama pembeli"></label><label>Email aktif<input name="email" type="email" required placeholder="email@contoh.com"></label><label>Catatan (opsional)<textarea name="note" rows="2" placeholder="Catatan tambahan"></textarea></label><div class="total-line"><span>Total pembayaran</span><strong id="checkoutTotal">Rp0</strong></div><button class="primary-btn full" type="submit">Buat pesanan demo ↗</button><p class="muted tiny">Simulasi ini hanya membuat pesanan lokal. Belum terhubung ke pembayaran SociaBuzz.</p></form></section></div>
+
+<div class="overlay hidden" id="adminOverlay"><section class="admin-panel"><div class="admin-head"><div><span class="eyebrow">CONTROL ROOM</span><h2>Store management<span class="accent">.</span></h2></div><button class="close-btn" data-close="adminOverlay">×</button></div>
+<div class="admin-tabs"><button class="tab active" data-tab="overview">Overview</button><button class="tab" data-tab="products">Produk</button><button class="tab" data-tab="orders">Pesanan</button><button class="tab" data-tab="settings">Pengaturan</button><button class="tab" data-tab="integrations">Integrasi</button></div>
+<div id="adminContent"></div></section></div>
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body></html>
